@@ -28,6 +28,56 @@ class _ShopScreenState extends State<ShopScreen>
     );
   }
 
+  _plantSelector(int index) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Color(0xFF32A060),
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 30.0),
+          child: Center(
+            child: Hero(
+              tag: plants[index].imageUrl,
+              child: Image(
+                height: 280.0,
+                width: 280.0,
+                image: AssetImage('assets/images/plant$index.png'),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+        Positioned(
+          top: 30.0,
+          right: 30.0,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'FROM',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15.0,
+                ),
+              ),
+              Text(
+                '\$${plants[index].price}',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,7 +185,7 @@ class _ShopScreenState extends State<ShopScreen>
                 },
                 itemCount: plants.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Text('$index');
+                  return _plantSelector(index);
                 },
               ),
             ),
