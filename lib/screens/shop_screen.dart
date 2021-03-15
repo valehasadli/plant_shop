@@ -52,7 +52,8 @@ class _ShopScreenState extends State<ShopScreen>
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (_) => PlantScreen()),
+            MaterialPageRoute(
+                builder: (_) => PlantScreen(plant: plants[index])),
           );
         },
         child: Stack(
@@ -136,7 +137,8 @@ class _ShopScreenState extends State<ShopScreen>
                 shape: CircleBorder(),
                 elevation: 2.0,
                 fillColor: Colors.black,
-                onPressed: () => print('add to cart'),
+                onPressed: () =>
+                    print('add to cart item id: ${plants[index].id}'),
                 child: Icon(
                   Icons.add_shopping_cart,
                   color: Colors.white,

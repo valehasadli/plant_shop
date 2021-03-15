@@ -1,4 +1,5 @@
 class Plant {
+  final int id;
   final String imageUrl;
   final String name;
   final String category;
@@ -7,6 +8,7 @@ class Plant {
   final String description;
 
   Plant({
+    this.id,
     this.imageUrl,
     this.name,
     this.category,
@@ -18,6 +20,7 @@ class Plant {
 
 final List<Plant> plants = [
   Plant(
+    id: 1,
     imageUrl: 'assets/images/plant0.png',
     name: 'Aloe Vera',
     category: 'Outdoor',
@@ -27,6 +30,7 @@ final List<Plant> plants = [
         'Aloe vera is a succulent plant species of the genus Aloe. It\'s medicinal uses and air purifying ability make it an awesome plant.',
   ),
   Plant(
+    id: 2,
     imageUrl: 'assets/images/plant1.png',
     name: 'Cool Plant',
     category: 'Indoor',
@@ -36,6 +40,7 @@ final List<Plant> plants = [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta risus id urna luctus efficitur.',
   ),
   Plant(
+    id: 3,
     imageUrl: 'assets/images/plant2.png',
     name: 'Really Cool Plant',
     category: 'New Arrival',
