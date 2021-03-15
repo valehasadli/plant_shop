@@ -52,7 +52,8 @@ class _ShopScreenState extends State<ShopScreen>
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (_) => PlantScreen()),
+            MaterialPageRoute(
+                builder: (_) => PlantScreen(plant: plants[index])),
           );
         },
         child: Stack(
